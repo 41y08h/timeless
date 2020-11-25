@@ -1,0 +1,20 @@
+.block {
+  width: 100%;
+}
+.heading {
+  font-size: $font-xl;
+  font-weight: 100;
+  margin-bottom: 1rem;
+  &-description {
+    font-size: $font-s;
+    margin-bottom: 1rem;
+  }
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.container {
+  padding: 1rem;
+}

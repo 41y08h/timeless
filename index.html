@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Prototype</title>
+    <script
+      async
+      src="https://kit.fontawesome.com/5db89d435f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <div class="logo">
+        <h1>Modern</h1>
+      </div>
+      <button class="menuToggler">
+        <i class="fas fa-compass fa-2x"></i>
+      </button>
+      <ul class="links">
+        <li><a href="#">Components</a></li>
+        <li><a href="#">Utilities</a></li>
+        <li><a href="#">System</a></li>
+        <button class="menuToggler">
+          <i class="fas fa-times fa-2x"></i>
+        </button>
+      </ul>
+    </nav>
+    <div class="container">
+      <section id="buttons">
+        <h1 class="heading">Buttons</h1>
+        <h2 class="heading-description">Click to copy class names.</h2>
+        <div>
+          <button class="blue btn">blue btn</button>
+          <button class="green btn">green btn</button>
+          <button class="red btn">red btn</button>
+          <button class="orange btn">orange btn</button>
+          <button class="light btn">light btn</button>
+          <button class="dark btn">dark btn</button>
+          <button class="light btn" disabled>
+            <code>disabled</code> attribute
+          </button>
+        </div>
+        <div>
+          <button class="blue-outline btn">blue-outline btn</button>
+          <button class="green-outline btn">green-outline btn</button>
+          <button class="red-outline btn">red-outline btn</button>
+          <button class="orange-outline btn">orange-outline btn</button>
+          <button class="dark-outline btn">dark-outline btn</button>
+        </div>
+      </section>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>

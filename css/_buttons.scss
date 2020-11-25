@@ -1,0 +1,52 @@
+@mixin btn($color-b, $color) {
+  background-color: $color-b;
+  color: $color;
+  &:hover,
+  &:focus {
+    background-color: darken($color: $color-b, $amount: 10);
+  }
+  &-outline {
+    background-color: transparent;
+    color: $color-b;
+    border: 1px solid $color-b;
+    &:hover {
+      background-color: $color-b;
+      color: $color;
+    }
+  }
+}
+
+.btn {
+  border: none;
+  padding: 8px 30px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: $font-s;
+  outline: none;
+  transition: box-shadow background-color;
+  transition-duration: 200ms;
+  cursor: pointer;
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  &.green {
+    @include btn(#16b316, #fff);
+  }
+  &.blue {
+    @include btn(#3122fc, #fff);
+  }
+  &.red {
+    @include btn(tomato, #fff);
+  }
+  &.orange {
+    @include btn(orange, #fff);
+  }
+  &.light {
+    @include btn(#efefef, #000);
+  }
+  &.dark {
+    @include btn(#23232e, #fff);
+  }
+}
