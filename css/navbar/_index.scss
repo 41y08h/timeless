@@ -1,5 +1,6 @@
 $navbar-height: 64px;
 $navbar-toggle-speed: 0.2s;
+$navbar-dropdown-box-shadow: -2px 2px 25px 1px #0000001c;
 
 nav {
   position: relative;
@@ -83,7 +84,7 @@ nav {
       padding: 2rem 0;
       border-radius: 20px;
 
-      // Responsive properties
+      // Transition properties
       height: 0;
       width: 0;
       transform: scale(0);
@@ -92,6 +93,7 @@ nav {
         width: 100%;
         text-align: center;
         cursor: pointer;
+        background-color: #fff;
         &:hover {
           background-color: darken($color: #fff, $amount: 2);
         }

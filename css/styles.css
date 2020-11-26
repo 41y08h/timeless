@@ -403,6 +403,7 @@ nav.navbar ul.links li > *:first-child {
     width: 100%;
     text-align: center;
     cursor: pointer;
+    background-color: #fff;
   }
   nav.navbar ul.links li:hover {
     background-color: #fafafa;
@@ -424,11 +425,102 @@ nav.navbar.fixed {
   z-index: 1000;
 }
 
-nav.navbar .dropdown ul {
-  display: none;
-  position: absolute;
+nav.navbar ul.links {
+  overflow: visible;
+}
+
+nav.navbar .dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+nav.navbar .dropdown .dropdown {
+  position: unset;
+}
+
+nav.navbar .dropdown .dropdown ul {
   top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav.navbar .dropdown ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 50px;
   right: 0;
+  background-color: #fff;
+  -webkit-box-shadow: -2px 2px 25px 1px #0000001c;
+          box-shadow: -2px 2px 25px 1px #0000001c;
+  border-radius: 10px;
+  padding: 20px 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform;
+  transition: -webkit-transform;
+  transition: transform;
+  transition: transform, -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  background-color: #fff;
+  z-index: 1000;
+}
+
+nav.navbar .dropdown ul li {
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  background-color: #fff;
+  line-height: 1.5;
+}
+
+nav.navbar .dropdown ul li:hover {
+  background-color: #fafafa;
+}
+
+nav.navbar .dropdown ul li > *:first-child {
+  padding: 1rem 2rem;
+}
+
+nav.navbar .dropdown.active > ul {
+  -webkit-box-shadow: -2px 2px 25px 1px #0000001c;
+          box-shadow: -2px 2px 25px 1px #0000001c;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+@media only screen and (max-width: 990px) {
+  nav.navbar {
+    position: relative;
+  }
+  nav.navbar .dropdown {
+    position: unset;
+  }
+  nav.navbar .dropdown ul {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  nav.navbar .dropdown ul li > *:first-child {
+    padding: 2rem 2rem;
+  }
 }
 
 .block {

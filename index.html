@@ -21,14 +21,32 @@
       <ul class="links">
         <li><a href="#">Components</a></li>
         <li><a href="#">Utilities</a></li>
-        <li><a href="#">System</a></li>
         <li class="dropdown">
-          <span>Dropdown</span>
+          <span class="dropdown-enter">Dropdown 1</span>
           <ul>
-            <li>one</li>
-            <li>two</li>
+            <li><a href="#">One</a></li>
+            <li><a href="#">Two</a></li>
+            <li class="dropdown">
+              <span class="dropdown-enter">Nested Dropdown</span>
+              <ul>
+                <li><a href="#">One</a></li>
+                <li><a href="#">Two</a></li>
+                <li class="dropdown-back"><span>Back</span></li>
+              </ul>
+            </li>
+
+            <li class="dropdown-back"><span>Back</span></li>
           </ul>
         </li>
+        <li class="dropdown">
+          <span class="dropdown-enter">Dropdown 2</span>
+          <ul>
+            <li><a href="#">Three</a></li>
+            <li><a href="#">Four</a></li>
+            <li class="dropdown-back"><span>Back</span></li>
+          </ul>
+        </li>
+        <li><a href="#">System</a></li>
       </ul>
     </nav>
     <div class="container">

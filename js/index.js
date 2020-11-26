@@ -23,3 +23,22 @@ menuTogglers.forEach((toggler) =>
     menu.classList.toggle("active");
   })
 );
+
+// Dropdowns
+
+const dropDownBacks = document.querySelectorAll(".dropdown-back");
+const dropdownEnters = document.querySelectorAll(".dropdown-enter");
+
+dropDownBacks.forEach((t) =>
+  t.addEventListener("click", () => {
+    const dropdownLi = t.parentElement.parentElement;
+    dropdownLi.classList.remove("active");
+  })
+);
+
+dropdownEnters.forEach((t) =>
+  t.addEventListener("click", () => {
+    const dropdownLi = t.parentElement;
+    dropdownLi.classList.add("active");
+  })
+);
