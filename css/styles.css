@@ -547,7 +547,12 @@ nav.navbar .dropdown.active > ul {
 }
 
 .container {
-  padding: 1rem;
+  padding: 1rem 2rem;
+  padding-top: 3rem;
+}
+
+section.docs {
+  padding-bottom: 4rem;
 }
 
 html {
