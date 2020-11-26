@@ -25,6 +25,7 @@ menuTogglers.forEach((toggler) =>
 );
 
 // Dropdowns
+let entryDropDownOpen = false;
 
 const dropDownBacks = document.querySelectorAll(".dropdown-back");
 const dropdownEnters = document.querySelectorAll(".dropdown-enter");
@@ -32,6 +33,10 @@ const dropdownEnters = document.querySelectorAll(".dropdown-enter");
 dropDownBacks.forEach((t) =>
   t.addEventListener("click", () => {
     const dropdownLi = t.parentElement.parentElement;
+
+    // Check for entry dropdown
+    if (dropdownLi.classList.contains("entry")) entryDropDownOpen = false;
+
     dropdownLi.classList.remove("active");
   })
 );
@@ -39,6 +44,20 @@ dropDownBacks.forEach((t) =>
 dropdownEnters.forEach((t) =>
   t.addEventListener("click", () => {
     const dropdownLi = t.parentElement;
+
+    // Check for entry dropdown
+    if (dropdownLi.classList.contains("entry")) {
+      if (entryDropDownOpen) return;
+
+      // Open this entry dropdown
+
+      // Close all other entry dropdowns
+      const entryDropDowns = document.querySelectorAll(
+        "nav.navbar .dropdown.entry"
+      );
+      entryDropDowns.forEach((t) => t.classList.remove("active"));
+    }
+
     dropdownLi.classList.add("active");
   })
 );
