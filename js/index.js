@@ -21,6 +21,5 @@ const menu = document.querySelector("nav.navbar");
 menuTogglers.forEach((toggler) =>
   toggler.addEventListener("click", () => {
     menu.classList.toggle("active");
-    document.body.classList.toggle("navbar-active");
   })
 );

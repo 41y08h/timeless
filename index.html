@@ -10,22 +10,25 @@
     ></script>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
-    <nav class="navbar" id="navbar">
+  <body class="with-navbar">
+    <nav class="navbar fixed">
       <div class="logo">
         <h1>Modern</h1>
       </div>
       <button class="menuToggler">
         <i class="fas fa-compass fa-2x"></i>
       </button>
-      <div class="mask menuToggler"></div>
       <ul class="links">
         <li><a href="#">Components</a></li>
         <li><a href="#">Utilities</a></li>
         <li><a href="#">System</a></li>
-        <button class="menuToggler">
-          <i class="fas fa-times fa-2x"></i>
-        </button>
+        <li class="dropdown">
+          <span>Dropdown</span>
+          <ul>
+            <li>one</li>
+            <li>two</li>
+          </ul>
+        </li>
       </ul>
     </nav>
     <div class="container">
@@ -33,12 +36,12 @@
         <h1 class="heading">Buttons</h1>
         <h2 class="heading-description">Click to copy class names.</h2>
         <div>
+          <button class="red btn">red btn</button>
           <button class="blue btn">blue btn</button>
           <button class="green btn">green btn</button>
-          <button class="red btn">red btn</button>
           <button class="orange btn">orange btn</button>
-          <button class="light btn">light btn</button>
           <button class="dark btn">dark btn</button>
+          <button class="light btn">light btn</button>
           <button class="light btn" disabled>
             <code>disabled</code> attribute
           </button>

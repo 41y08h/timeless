@@ -1,0 +1,122 @@
+$navbar-height: 64px;
+$navbar-toggle-speed: 0.2s;
+
+nav {
+  position: relative;
+  &.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $navbar-height;
+    padding: 0 1rem;
+
+    .logo {
+      h1 {
+        font-size: $font-xl;
+      }
+      margin-right: 2rem;
+    }
+    .menuToggler {
+      display: none;
+      border: none;
+      background: none;
+      outline: none;
+      transition: transform $navbar-toggle-speed ease;
+    }
+    ul.links {
+      display: flex;
+      align-items: center;
+      transition: height width transform;
+      transition-duration: $navbar-toggle-speed;
+      transition-timing-function: ease;
+      max-height: 80vh;
+      overflow: auto hidden;
+
+      // Hide scrollbar
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+
+      li {
+        font-size: $font-s;
+
+        // Item text
+        & > *:first-child {
+          display: block;
+          padding: 1rem 0;
+          padding-left: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  // Show menu toggler and hide links
+  nav.navbar {
+    .menuToggler {
+      display: block;
+    }
+
+    // Toggled state
+    &.active {
+      button.menuToggler {
+        transform: rotate(180deg);
+      }
+      ul.links {
+        box-shadow: -2px 2px 25px 1px #0000001c;
+        height: fit-content;
+        width: 200px;
+        transform: scale(1);
+      }
+    }
+
+    // Inactive menu
+    ul.links {
+      position: absolute;
+      top: 55px;
+      right: 20px;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      overflow: auto;
+      padding: 2rem 0;
+      border-radius: 20px;
+
+      // Responsive properties
+      height: 0;
+      width: 0;
+      transform: scale(0);
+
+      li {
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+          background-color: darken($color: #fff, $amount: 2);
+        }
+        // Item Text
+        & > *:first-child {
+          padding: 2rem 0;
+        }
+      }
+    }
+  }
+}
+
+// Fixed navbar
+body {
+  &.with-navbar {
+    padding-top: $navbar-height;
+  }
+}
+
+nav.navbar.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+}
+
+@import "./dropdowns";

@@ -1,0 +1,13 @@
+// With dropdown(s)
+
+nav.navbar {
+  // Dropdown Item
+  .dropdown {
+    ul {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}

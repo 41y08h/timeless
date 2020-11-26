@@ -1,4 +1,4 @@
-@import "./resets", "./variables", "./buttons", "./navbar", "./others";
+@import "./resets", "./variables", "./buttons", "./navbar/index", "./others";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 html {
   font-size: 16px;
@@ -13,12 +13,8 @@ html {
 }
 
 body {
-  position: relative;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  &.navbar-active {
-    overflow: hidden;
-  }
 }
 
 code {
