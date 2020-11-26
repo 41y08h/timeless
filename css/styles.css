@@ -369,7 +369,7 @@ nav.navbar ul.links .menuToggler {
     display: unset;
   }
   nav.navbar.active .mask {
-    opacity: 0.3;
+    opacity: 0.8;
     display: block;
     pointer-events: all;
   }
@@ -394,7 +394,6 @@ nav.navbar ul.links .menuToggler {
     z-index: 1000;
     overflow: auto;
     padding: 2rem 0;
-    border-left: 1px solid #dbdbdb;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
   }

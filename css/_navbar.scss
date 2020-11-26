@@ -58,7 +58,7 @@ nav.navbar {
     // Toggled state
     &.active {
       .mask {
-        opacity: 0.3;
+        opacity: 0.8;
         display: block;
         pointer-events: all;
       }
@@ -80,9 +80,7 @@ nav.navbar {
       z-index: 1000;
       overflow: auto;
       padding: 2rem 0;
-      border-left: 1px solid #dbdbdb;
       transform: translateX(100%);
-
       li {
         width: 100%;
         text-align: center;
