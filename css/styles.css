@@ -445,6 +445,8 @@ nav.navbar .dropdown .dropdown ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 nav.navbar .dropdown ul {
@@ -492,13 +494,15 @@ nav.navbar .dropdown ul li:hover {
   background-color: #fafafa;
 }
 
+nav.navbar .dropdown ul li:active {
+  background: none;
+}
+
 nav.navbar .dropdown ul li > *:first-child {
   padding: 1rem 2rem;
 }
 
 nav.navbar .dropdown.active > ul {
-  -webkit-box-shadow: -2px 2px 25px 1px #0000001c;
-          box-shadow: -2px 2px 25px 1px #0000001c;
   -webkit-transform: scale(1);
           transform: scale(1);
 }
