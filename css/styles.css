@@ -441,10 +441,6 @@ nav.navbar .dropdown .dropdown {
 nav.navbar .dropdown .dropdown ul {
   top: 0;
   width: 100%;
-  height: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -510,6 +506,9 @@ nav.navbar .dropdown.active > ul {
 @media only screen and (max-width: 990px) {
   nav.navbar {
     position: relative;
+  }
+  nav.navbar ul.links {
+    overflow: auto;
   }
   nav.navbar .dropdown {
     position: unset;
