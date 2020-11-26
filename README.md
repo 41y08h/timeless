@@ -1,4 +1,4 @@
-# Modern Prototype
+# Timeless
 
 ### All `.xyz` are meant to be `<div class={xyz} >` unless stated otherwise.
 
