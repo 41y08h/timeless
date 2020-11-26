@@ -321,6 +321,20 @@ nav.navbar .menuToggler {
   background: none;
 }
 
+nav.navbar .mask {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  z-index: 500;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
 nav.navbar ul.links {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -328,9 +342,10 @@ nav.navbar ul.links {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
-  -webkit-transition: width 0.2s;
-  transition: width 0.2s;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
   overflow-x: auto;
   overflow-y: hidden;
 }
@@ -346,21 +361,24 @@ nav.navbar ul.links li a {
 }
 
 nav.navbar ul.links .menuToggler {
-  margin: auto;
+  margin: 1rem auto;
 }
 
 @media only screen and (max-width: 990px) {
-  nav.navbar ul.links {
-    display: none;
+  nav.navbar button.menuToggler {
+    display: unset;
   }
-  nav.navbar .menuToggler {
+  nav.navbar.active .mask {
+    opacity: 0.3;
     display: block;
+    pointer-events: all;
   }
   nav.navbar.active ul.links {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: absolute;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  nav.navbar ul.links {
+    position: fixed;
     top: 0;
     right: 0;
     -webkit-box-orient: vertical;
@@ -368,6 +386,7 @@ nav.navbar ul.links .menuToggler {
         -ms-flex-direction: column;
             flex-direction: column;
     height: 100vh;
+    width: 200px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -375,37 +394,15 @@ nav.navbar ul.links .menuToggler {
     z-index: 1000;
     overflow: auto;
     padding: 2rem 0;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-backdrop-filter: invert(70%);
-            backdrop-filter: invert(70%);
     border-left: 1px solid #dbdbdb;
-    -webkit-animation: slide 0.2s forwards;
-            animation: slide 0.2s forwards;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
   }
-  @-webkit-keyframes slide {
-    from {
-      width: 0;
-    }
-    to {
-      width: 200px;
-    }
-  }
-  @keyframes slide {
-    from {
-      width: 0;
-    }
-    to {
-      width: 200px;
-    }
-  }
-  nav.navbar.active ul.links li {
+  nav.navbar ul.links li {
     width: 100%;
     text-align: center;
   }
-  nav.navbar.active ul.links li a {
-    width: 100%;
+  nav.navbar ul.links li a {
     display: block;
     padding: 2rem 0;
   }
@@ -449,6 +446,10 @@ html {
 body {
   position: relative;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+body.navbar-active {
+  overflow: hidden;
 }
 
 code {

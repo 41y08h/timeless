@@ -15,11 +15,22 @@ nav.navbar {
     border: none;
     background: none;
   }
+  .mask {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    z-index: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
   ul.links {
     display: flex;
     align-items: center;
-    position: relative;
-    transition: width 0.2s;
+    transition: transform 0.2s;
     li {
       font-size: $font-s;
       a {
@@ -29,7 +40,7 @@ nav.navbar {
       }
     }
     .menuToggler {
-      margin: auto;
+      margin: 1rem auto;
     }
     overflow-x: auto;
     overflow-y: hidden;
@@ -39,49 +50,45 @@ nav.navbar {
 @media only screen and (max-width: 990px) {
   // Show menu togglers and hide links
   nav.navbar {
-    ul.links {
-      display: none;
-    }
-    .menuToggler {
-      display: block;
+    // Show all togglers
+    button.menuToggler {
+      display: unset;
     }
 
-    // Responsive toggled mode
+    // Toggled state
     &.active {
+      .mask {
+        opacity: 0.3;
+        display: block;
+        pointer-events: all;
+      }
       ul.links {
-        display: flex;
-        position: absolute;
-        top: 0;
-        right: 0;
-        flex-direction: column;
-        height: 100vh;
-        align-items: center;
-        background-color: #fff;
-        z-index: 1000;
-        overflow: auto;
-        padding: 2rem 0;
-        justify-content: center;
-        backdrop-filter: invert(70%);
-        border-left: 1px solid #dbdbdb;
-        animation: slide 0.2s forwards;
+        transform: translateX(0);
+      }
+    }
 
-        @keyframes slide {
-          from {
-            width: 0;
-          }
-          to {
-            width: 200px;
-          }
-        }
+    // Responsive mode menu
+    ul.links {
+      position: fixed;
+      top: 0;
+      right: 0;
+      flex-direction: column;
+      height: 100vh;
+      width: 200px;
+      align-items: center;
+      background-color: #fff;
+      z-index: 1000;
+      overflow: auto;
+      padding: 2rem 0;
+      border-left: 1px solid #dbdbdb;
+      transform: translateX(100%);
 
-        li {
-          width: 100%;
-          text-align: center;
-          a {
-            width: 100%;
-            display: block;
-            padding: 2rem 0;
-          }
+      li {
+        width: 100%;
+        text-align: center;
+        a {
+          display: block;
+          padding: 2rem 0;
         }
       }
     }
