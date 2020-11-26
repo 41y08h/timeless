@@ -515,7 +515,9 @@ nav.navbar .dropdown.active > ul {
   }
   nav.navbar .dropdown ul {
     width: 100%;
-    height: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     top: 0;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
